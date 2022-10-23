@@ -1,4 +1,4 @@
-def call ( ) {
+def call (url ) {
 
 
 pipeline {
@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage ('sourcecode') {
             steps {
-                git url: "https://github.com/maramvenkatareddy/maven_jenkins_shared_library.git"
+                git url: "${url}"
                     branch: 'main'
             }
         }
