@@ -1,4 +1,4 @@
-def call (url ) {
+def call (String url ) {
 
 
 pipeline {
