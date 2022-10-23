@@ -12,11 +12,11 @@ pipeline {
                     branch: 'main'
             }
         }
-        /*stage ('build the code') {
+        stage ('build the code') {
             steps {
                 sh 'mvn package'
             }
-        }*/
+        }
     }
 }
 
