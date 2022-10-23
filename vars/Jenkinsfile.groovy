@@ -1,4 +1,4 @@
-def call(String url = 'https://github.com/maramvenkatareddy/spring-petclinic-fork.git') {
+def call() {
 
 
     pipeline {
@@ -8,7 +8,7 @@ def call(String url = 'https://github.com/maramvenkatareddy/spring-petclinic-for
         stages {
             stage ('sourcecode') {
                 steps {
-                    git url: "${url}",
+                    git url: 'https://github.com/maramvenkatareddy/spring-petclinic-fork.git',
                         branch: 'main'
                 }
             }
