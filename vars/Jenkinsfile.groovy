@@ -1,4 +1,5 @@
-def call (url) {
+def call ( ) {
+
 
 pipeline {
     agent { label 'terraform' }
@@ -7,15 +8,15 @@ pipeline {
     stages {
         stage ('sourcecode') {
             steps {
-                git url: "${url}"
-                    branch: 'devlop'
+                git url: "https://github.com/maramvenkatareddy/maven_jenkins_shared_library.git"
+                    branch: 'main'
             }
         }
-        stage ('build the code') {
+        /*stage ('build the code') {
             steps {
                 sh 'mvn package'
             }
-        }
+        }*/
     }
 }
 
