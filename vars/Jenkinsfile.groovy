@@ -1,4 +1,4 @@
-def call(String url ) {
+def call(String url = 'https://github.com/maramvenkatareddy/spring-petclinic-fork.git') {
 
 
     pipeline {
