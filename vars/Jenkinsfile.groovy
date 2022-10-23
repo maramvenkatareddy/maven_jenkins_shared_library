@@ -1,23 +1,22 @@
-def call (String url ) {
+def call(String url ) {
 
 
-pipeline {
-    agent { label 'terraform' }
-    triggers { pollSCM('* * * * *') }
-    
-    stages {
-        stage ('sourcecode') {
-            steps {
-                git url: "${url}"
-                    branch: 'main'
+    pipeline {
+        agent { label 'terraform' }
+        triggers { pollSCM('* * * * *') }
+
+        stages {
+            stage ('sourcecode') {
+                steps {
+                    git url: "${url}",
+                        branch: 'main'
+                }
             }
-        }
-        stage ('build the code') {
-            steps {
-                sh 'mvn package'
+            stage ('build the code') {
+                steps {
+                    sh 'mvn package'
+                }
             }
         }
     }
-}
-
 }
